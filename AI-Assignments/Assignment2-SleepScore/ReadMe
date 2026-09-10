@@ -1,0 +1,152 @@
+# Sleep Score Calculation using a Simple Reflex Agent
+
+## 📌 Project Overview
+
+This project calculates a **Sleep Score** based on different sleep-related and lifestyle factors.
+
+The project uses a formula-based approach to convert different factors into scores and combines them to produce a final **Sleep Score out of 100**.
+
+A **Simple Reflex Agent** is then used to classify the Sleep Score and provide an appropriate recommendation.
+
+## 🎯 Objective
+
+The main objectives of this project are:
+
+- Calculate a Sleep Score using sleep and lifestyle factors.
+- Convert different factors into a common 0–100 scale.
+- Combine the factors using weighted scoring.
+- Classify the final Sleep Score.
+- Build a Simple Reflex Agent that provides an action based on the sleep category.
+
+## 📊 Factors Used
+
+The following factors are used to calculate the Sleep Score:
+
+- Sleep Duration
+- Quality of Sleep
+- Stress Level
+- Physical Activity Level
+- Heart Rate
+
+## ⚙️ Methodology
+
+The project follows these steps:
+
+1. Load the Sleep Health and Lifestyle dataset.
+2. Select the required sleep-related factors.
+3. Convert each factor into a score between 0 and 100.
+4. Calculate the final Sleep Score using weighted factors.
+5. Classify the Sleep Score as Good, Average, or Poor.
+6. Use the category as the condition for the Simple Reflex Agent.
+7. Generate an appropriate recommendation.
+
+## 🧮 Individual Score Calculations
+
+### 1. Sleep Duration Score
+
+8 hours is considered the target value.
+
+\[
+Duration\ Score =
+\frac{Sleep\ Duration}{8}\times100
+\]
+
+The score is capped at 100.
+
+### 2. Quality of Sleep Score
+
+Quality of Sleep is given on a 1–10 scale.
+
+\[
+Quality\ Score =
+\frac{Quality\ of\ Sleep}{10}\times100
+\]
+
+### 3. Stress Score
+
+Lower stress receives a higher score.
+
+\[
+Stress\ Score =
+\frac{10-Stress\ Level}{9}\times100
+\]
+
+### 4. Physical Activity Score
+
+60 minutes of physical activity per day is considered the target.
+
+\[
+Activity\ Score =
+\frac{Physical\ Activity\ Level}{60}\times100
+\]
+
+The score is capped at 100.
+
+### 5. Heart Rate Score
+
+A simple scoring rule is used to convert heart rate into a 0–100 score.
+
+\[
+Heart\ Rate\ Score =
+\frac{100-Heart\ Rate}{40}\times100
+\]
+
+The score is limited to the range 0–100.
+
+## 🧮 Final Sleep Score
+
+The individual scores are combined using weighted scoring:
+
+\[
+Sleep\ Score =
+0.30D+
+0.30Q+
+0.15S+
+0.15A+
+0.10H
+\]
+
+Where:
+
+- `D` = Duration Score
+- `Q` = Quality Score
+- `S` = Stress Score
+- `A` = Activity Score
+- `H` = Heart Rate Score
+
+The final score is represented on a **0–100 scale**.
+
+> Note: The above scoring rules and weights are defined for this project and are not a universal medical Sleep Score formula.
+
+## 🏷️ Sleep Score Classification
+
+| Sleep Score | Category |
+|-------------|----------|
+| 80–100 | Good |
+| 60–79 | Average |
+| 0–59 | Poor |
+
+## 🤖 Simple Reflex Agent
+
+The agent makes a decision based on the current Sleep Score category.
+
+| Category | Agent Action |
+|----------|--------------|
+| Good | Maintain your current sleep routine. |
+| Average | Try to improve your sleep routine. |
+| Poor | Improve sleep duration and sleep habits. |
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- Jupyter Notebook
+
+## 📁 Project Files
+
+- `Sleep_Score.ipynb` — Jupyter Notebook containing the complete implementation.
+- `Sleep_health_and_lifestyle_dataset.csv` — Dataset used for the project.
+
+## 📌 Conclusion
+
+This project demonstrates how a **Simple Reflex Agent** can use predefined rules and a formula-based Sleep Score to evaluate sleep quality and provide an appropriate recommendation.
