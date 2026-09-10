@@ -1,1 +1,100 @@
+# Air Quality Index (AQI) Simple Reflex Agent
 
+## 📌 Project Overview
+
+This project implements a **Simple Reflex Agent** that calculates the Air Quality Index (AQI) from air pollutant values and classifies the air quality into different categories.
+
+The agent takes the current air-quality information from the environment, calculates the AQI, determines the air-quality category, and provides an appropriate action.
+
+## 🎯 Objective
+
+The main objective of this project is to:
+
+- Calculate AQI using pollutant concentrations.
+- Calculate individual AQI values for different pollutants.
+- Determine the overall AQI.
+- Classify the AQI into air-quality categories.
+- Build a Simple Reflex Agent that gives an action based on the AQI category.
+
+## 📊 Pollutants Used
+
+The following pollutants are used in this project:
+
+- PM2.5
+- PM10
+- Carbon Monoxide (CO)
+- Nitrogen Dioxide (NO₂)
+- Sulphur Dioxide (SO₂)
+- Ozone (O₃)
+
+## ⚙️ Methodology
+
+The project follows these steps:
+
+1. Load the air-quality dataset.
+2. Select the pollutant values.
+3. Define AQI breakpoints for each pollutant.
+4. Calculate the individual AQI for each pollutant.
+5. Select the maximum pollutant AQI as the overall AQI.
+6. Classify the overall AQI.
+7. Use the AQI category as the condition for the Simple Reflex Agent.
+8. Generate an appropriate action based on the category.
+
+## 🧮 AQI Calculation
+
+The AQI for each pollutant is calculated using the breakpoint interpolation formula:
+
+\[
+AQI = \frac{I_{high}-I_{low}}{C_{high}-C_{low}}
+(C-C_{low})+I_{low}
+\]
+
+Where:
+
+- `C` = pollutant concentration
+- `Clow` = lower concentration breakpoint
+- `Chigh` = higher concentration breakpoint
+- `Ilow` = lower AQI breakpoint
+- `Ihigh` = higher AQI breakpoint
+
+The overall AQI is calculated as the maximum AQI among the individual pollutant AQIs.
+
+## 🏷️ AQI Classification
+
+The calculated AQI is classified into the following categories:
+
+| AQI Range | Category |
+|-----------|----------|
+| 0–50 | Good |
+| 51–100 | Moderate |
+| 101–150 | Poor |
+| 151–200 | Severe |
+| Above 200 | Very Severe |
+
+## 🤖 Simple Reflex Agent
+
+The agent makes decisions based only on the current AQI category.
+
+| AQI Category | Agent Action |
+|--------------|--------------|
+| Good | No action needed |
+| Moderate | Sensitive people should be cautious |
+| Poor | Reduce prolonged outdoor activities |
+| Severe | Avoid outdoor activities and stay indoors |
+| Very Severe | Avoid outdoor exposure |
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Jupyter Notebook
+
+## 📁 Project Files
+
+- `AQI_Assignment.ipynb` — Jupyter Notebook containing the complete implementation.
+- `air_quality_historical.csv` — Air-quality dataset used for the project.
+
+## 📌 Conclusion
+
+The project demonstrates how a **Simple Reflex Agent** can use environmental air-quality information to calculate AQI, classify air quality, and provide an appropriate response based on predefined rules.
