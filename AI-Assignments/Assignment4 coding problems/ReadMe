@@ -1,0 +1,35 @@
+AI Search & UGV Navigation Assignment
+This repository contains three AI/search implementations developed in Python using Google Colab/Jupyter Notebook.
+Contents
+1. Dijkstra's Shortest Path – Finds the shortest route between two Indian cities.
+2. UGV Navigation using A* – Finds a path for an Unmanned Ground Vehicle through a grid containing obstacles.
+3. UGV Navigation with Dynamic Obstacles – Uses A* repeatedly so the UGV can re-plan when new obstacles appear.
+
+Assignment 1 – Dijkstra's Shortest Path
+
+Finds the shortest route between two Indian cities.
+Uses Dijkstra's Algorithm.
+Uses city distance as the edge weight.
+Dataset: indian-cities-dataset.csv
+
+Assignment 2 – UGV Navigation
+
+Finds a path for an Unmanned Ground Vehicle (UGV) in a 70×70 grid.
+Uses A* Search with Manhattan distance.
+Supports low, medium, and high obstacle densities.
+Allows movement in four directions: up, down, left, and right.
+
+Assignment 3 – Dynamic UGV Navigation
+
+Extends UGV navigation to handle dynamic obstacles.
+Uses A* Search with re-planning.
+New obstacles can appear while the UGV is moving.
+If the path is blocked, a new path is calculated automatically.
+
+Technologies Used
+
+Python
+Google Colab / Jupyter Notebook
+Pandas
+Heap Queue (heapq)
+Random
