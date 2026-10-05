@@ -21,10 +21,18 @@ Allows movement in four directions: up, down, left, and right.
 
 Assignment 3 – Dynamic UGV Navigation
 
-Extends UGV navigation to handle dynamic obstacles.
-Uses A* Search with re-planning.
-New obstacles can appear while the UGV is moving.
-If the path is blocked, a new path is calculated automatically.
+Handling Dynamic Obstacles in a UGV Environment
+In a real-world environment, obstacles may move or appear unexpectedly. Unlike static obstacles, their positions are not known in advance. Therefore, the UGV must continuously monitor its surroundings and update its path.
+The UGV can use the A* algorithm with dynamic re-planning to navigate through an environment containing moving or unknown obstacles.
+Working Procedure :-
+1)Initialize the grid with the start and goal positions.
+2)Detect obstacles using sensors.
+3)Update the grid whenever new obstacles are detected.
+4)Use A* to calculate the path to the goal.
+5)Move along the calculated path while monitoring the surroundings.
+6)If an obstacle blocks the path, update the grid and calculate a new path from the current position.
+7)Repeat this process until the UGV reaches the goal or no safe path is available.
+By using A* with dynamic re-planning, the UGV can respond to unexpected obstacles and calculate alternative routes. Continuous obstacle detection and path updating help the UGV navigate changing environments and reach its goal.
 
 Technologies Used
 
